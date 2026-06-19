@@ -1,0 +1,27 @@
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.notfound-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-seal);
+}
+
+.notfound-page h1 {
+  font-size: var(--text-3xl);
+}
+
+.notfound-page p {
+  color: var(--color-ink-soft);
+  margin: 0 0 var(--space-4);
+}

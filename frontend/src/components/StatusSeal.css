@@ -1,0 +1,45 @@
+.status-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem 0.25rem 0.45rem;
+  border: 1px solid;
+}
+
+.seal-ring {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  flex-shrink: 0;
+}
+
+.seal-sm { font-size: 0.6875rem; padding: 0.15rem 0.55rem 0.15rem 0.4rem; }
+.seal-md { font-size: var(--text-xs); }
+
+.seal-published {
+  color: var(--color-pine);
+  background: var(--color-pine-wash);
+  border-color: rgba(61, 90, 76, 0.25);
+}
+.seal-published .seal-ring {
+  background: var(--color-pine);
+  border-color: var(--color-pine);
+}
+
+.seal-draft {
+  color: var(--color-amber);
+  background: var(--color-amber-wash);
+  border-color: rgba(156, 122, 46, 0.25);
+}
+
+.seal-archived {
+  color: var(--color-bark);
+  background: var(--color-rule-soft);
+  border-color: var(--color-rule);
+}

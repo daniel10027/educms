@@ -1,0 +1,146 @@
+/* =====================================================
+   EduCMS — Design Tokens
+   Direction: cabinet de lecture / cahier savant.
+   Papier chaud, encre, sceau terracotta. Pas de SaaS générique.
+   ===================================================== */
+
+:root {
+  /* Color */
+  --color-paper: #FAF7F0;
+  --color-paper-raised: #FFFFFF;
+  --color-ink: #1C1A17;
+  --color-ink-soft: #4A453E;
+  --color-bark: #6B5544;
+  --color-bark-soft: #8C7563;
+  --color-seal: #B4502A;
+  --color-seal-deep: #93401F;
+  --color-seal-wash: #F3E3D9;
+  --color-pine: #3D5A4C;
+  --color-pine-wash: #E2EAE5;
+  --color-rule: #D6CFC2;
+  --color-rule-soft: #E8E2D6;
+  --color-danger: #9C3B2E;
+  --color-danger-wash: #F5E1DD;
+  --color-amber: #9C7A2E;
+  --color-amber-wash: #F4ECDA;
+
+  /* Type */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.875rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 3.25rem;
+
+  /* Space */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.75rem;
+  --space-8: 3.5rem;
+
+  /* Radius — quiet, slightly soft (paper corners, not pill-shaped SaaS) */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Shadow — soft, low-contrast, as if paper lifted slightly */
+  --shadow-sm: 0 1px 2px rgba(28, 26, 23, 0.06);
+  --shadow-md: 0 4px 16px rgba(28, 26, 23, 0.08);
+  --shadow-lg: 0 12px 32px rgba(28, 26, 23, 0.12);
+
+  /* Transition */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+::selection {
+  background: var(--color-seal-wash);
+  color: var(--color-seal-deep);
+}
+
+/* Scrollbar — quiet */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule);
+  border-radius: 10px;
+  border: 2px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bark-soft);
+}
+
+/* Focus visibility — never remove, only restyle */
+:focus-visible {
+  outline: 2px solid var(--color-seal);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
