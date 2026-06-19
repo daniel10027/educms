@@ -18,10 +18,6 @@ services:
     buildCommand: npm install
     startCommand: npm run migrate && npm start
     healthCheckPath: /api/health
-    disk:
-      name: educms-uploads
-      mountPath: /opt/render/project/src/backend/uploads
-      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
