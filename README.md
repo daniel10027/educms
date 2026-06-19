@@ -256,5 +256,3 @@ dans `src/styles/tokens.css`.
 - Ajouter des tests automatisés (Jest + Supertest, squelette déjà présent dans
   `backend/package.json`).
 - Internationalisation (actuellement entièrement en français).
-#   e d u c m s  
- 
