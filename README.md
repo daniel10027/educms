@@ -17,15 +17,15 @@ educms/
 
 ## 1. Aperçu technique
 
-| Couche | Choix | Détails |
-|---|---|---|
-| API | Node.js 18+, Express 4 | REST, JWT, validation, rate limiting |
-| Base de données | PostgreSQL 14+ | Schéma relationnel, recherche plein texte (`tsvector`), vues, fonctions |
-| Cache (optionnel) | Redis | Désactivable — l'app fonctionne sans (`REDIS_ENABLED=false`) |
-| Frontend | React 19 + Vite | SPA, React Router, design system maison |
-| Auth | JWT (access + refresh) | Rotation des refresh tokens en base |
-| Médias | Multer + Sharp | Upload, redimensionnement, miniatures |
-| Documentation API | Swagger UI | `/api/docs` |
+| Couche            | Choix                  | Détails                                                                 |
+| ----------------- | ---------------------- | ----------------------------------------------------------------------- |
+| API               | Node.js 18+, Express 4 | REST, JWT, validation, rate limiting                                    |
+| Base de données   | PostgreSQL 14+         | Schéma relationnel, recherche plein texte (`tsvector`), vues, fonctions |
+| Cache (optionnel) | Redis                  | Désactivable — l'app fonctionne sans (`REDIS_ENABLED=false`)            |
+| Frontend          | React 19 + Vite        | SPA, React Router, design system maison                                 |
+| Auth              | JWT (access + refresh) | Rotation des refresh tokens en base                                     |
+| Médias            | Multer + Sharp         | Upload, redimensionnement, miniatures                                   |
+| Documentation API | Swagger UI             | `/api/docs`                                                             |
 
 ### Fonctionnalités couvertes
 
@@ -72,11 +72,11 @@ npm run dev         # démarre l'API sur http://localhost:5000
 
 Comptes créés par `npm run seed` (à usage local uniquement) :
 
-| Rôle | Email | Mot de passe |
-|---|---|---|
-| Administrateur | admin@educms.local | Admin123! |
-| Éditeur | editor@educms.local | Editor123! |
-| Auteur | author@educms.local | Author123! |
+| Rôle           | Email               | Mot de passe |
+| -------------- | ------------------- | ------------ |
+| Administrateur | admin@educms.local  | Admin123!    |
+| Éditeur        | editor@educms.local | Editor123!   |
+| Auteur         | author@educms.local | Author123!   |
 
 L'API est documentée sur `http://localhost:5000/api/docs` et vérifiable via `http://localhost:5000/api/health`.
 
@@ -128,6 +128,7 @@ Si vous préférez créer les services à la main :
 **Base de données** : New > PostgreSQL. Notez l'`Internal Database URL`.
 
 **Backend** (New > Web Service) :
+
 - Root directory : `backend`
 - Build command : `npm install`
 - Start command : `npm run migrate && npm start`
@@ -136,6 +137,7 @@ Si vous préférez créer les services à la main :
   (`openssl rand -hex 32`), définissez `NODE_ENV=production` et `DB_SSL=true`.
 
 **Frontend** (New > Static Site) :
+
 - Root directory : `frontend`
 - Build command : `npm install && npm run build`
 - Publish directory : `dist`
@@ -191,23 +193,23 @@ backend/
 
 ### Principales routes API (`/api/v1`)
 
-| Méthode | Route | Accès |
-|---|---|---|
-| POST | `/auth/register`, `/auth/login` | Public |
-| POST | `/auth/refresh`, `/auth/logout` | Public |
-| GET | `/auth/me` | Authentifié |
-| GET | `/posts` | Public (articles publiés) / Staff (tous statuts) |
-| GET | `/posts/:slug` | Public |
-| GET | `/posts/by-id/:id` | Staff |
-| POST/PUT/DELETE | `/posts`, `/posts/:id` | Auteur, Éditeur, Admin |
-| GET/POST | `/posts/:id/revisions` | Staff |
-| GET/POST/PUT/DELETE | `/categories` | Lecture publique, écriture Éditeur/Admin |
-| GET/POST/PUT/DELETE | `/tags` | Lecture publique, écriture Staff |
-| GET/POST | `/comments/post/:postId` | Lecture publique, écriture tous |
-| PATCH/DELETE | `/comments/:id` | Éditeur, Admin |
-| GET/POST/PUT/DELETE | `/media` | Staff |
-| GET | `/users/dashboard` | Staff |
-| GET/PATCH | `/users`, `/users/:id/role` | Admin |
+| Méthode             | Route                           | Accès                                            |
+| ------------------- | ------------------------------- | ------------------------------------------------ |
+| POST                | `/auth/register`, `/auth/login` | Public                                           |
+| POST                | `/auth/refresh`, `/auth/logout` | Public                                           |
+| GET                 | `/auth/me`                      | Authentifié                                      |
+| GET                 | `/posts`                        | Public (articles publiés) / Staff (tous statuts) |
+| GET                 | `/posts/:slug`                  | Public                                           |
+| GET                 | `/posts/by-id/:id`              | Staff                                            |
+| POST/PUT/DELETE     | `/posts`, `/posts/:id`          | Auteur, Éditeur, Admin                           |
+| GET/POST            | `/posts/:id/revisions`          | Staff                                            |
+| GET/POST/PUT/DELETE | `/categories`                   | Lecture publique, écriture Éditeur/Admin         |
+| GET/POST/PUT/DELETE | `/tags`                         | Lecture publique, écriture Staff                 |
+| GET/POST            | `/comments/post/:postId`        | Lecture publique, écriture tous                  |
+| PATCH/DELETE        | `/comments/:id`                 | Éditeur, Admin                                   |
+| GET/POST/PUT/DELETE | `/media`                        | Staff                                            |
+| GET                 | `/users/dashboard`              | Staff                                            |
+| GET/PATCH           | `/users`, `/users/:id/role`     | Admin                                            |
 
 La documentation interactive complète est disponible sur `/api/docs` une fois
 le serveur démarré.
@@ -244,3 +246,13 @@ dans `src/styles/tokens.css`.
 - Validation systématique des entrées (express-validator).
 - Protection contre l'injection SQL via requêtes paramétrées (`pg`).
 - CORS restreint à l'origine du frontend configurée.
+
+## Captures d'écran
+
+|                               |                               |
+| ----------------------------- | ----------------------------- |
+| ![Capture 0](./results/0.png) | ![Capture 1](./results/1.png) |
+| ![Capture 2](./results/2.png) | ![Capture 3](./results/3.png) |
+| ![Capture 4](./results/4.png) | ![Capture 5](./results/5.png) |
+| ![Capture 6](./results/6.png) | ![Capture 7](./results/7.png) |
+| ![Capture 8](./results/8.png) | ![Capture 9](./results/9.png) |
